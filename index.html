@@ -32,11 +32,13 @@
         overflow: hidden;
       }
     </style>
+    <script>
+      performance.mark('css:unblock')
+    </script>
     <!-- End CSS -->
   </head>
   <body>
     <div class="container">
-
       <!-- Start images -->
       <div class="gallery">
         <img src="https://picsum.photos/id/237/380/200" />
@@ -53,5 +55,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- End JavaScript -->
+
+    <!-- Start performance analytics -->
+    <script async src="analytics.js"></script>
+    <!-- End performance analytics -->
   </body>
 </html>
