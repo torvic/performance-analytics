@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Performance Analytic Demo</title>
 
+    <!-- Start feature detects -->
+    <script>
+      window.__perf = window.performance && performance.mark
+    </script>
+    <!-- End feature detects -->
+
     <!-- Start fonts -->
     <script>
       window.WebFontConfig = {
@@ -51,20 +57,20 @@
       <!-- Start images -->
       <div class="gallery">
         <img
-          onload="performance.mark('img:visible')"
+          onload="__perf && performance.mark('img:visible')"
           src="https://picsum.photos/id/237/380/200"
         />
         <img
-          onload="performance.mark('img:visible')"
+          onload="__perf && performance.mark('img:visible')"
           src="https://picsum.photos/id/1/380/200"
         />
         <img
-          onload="performance.mark('img:visible')"
+          onload="__perf && performance.mark('img:visible')"
           src="https://picsum.photos/id/1003/380/200"
         />
       </div>
       <script>
-        performance.mark('img:visible')
+        __perf && performance.mark('img:visible')
       </script>
       <!-- End images -->
 
