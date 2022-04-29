@@ -16,3 +16,18 @@ To view demo, create a file called `index.html` and write some code. Next, start
 * We will use [webfont.js](https://github.com/typekit/webfontloader).
 * Update the main document to use `webfont.js`.
 * Create a promise  that is resolved once the font is loaded inside the file `analytics.js`.
+
+## Step 3: Measuring when images are visible
+
+download image -> not a good PM (performance)
+
+image visible to the use -> good PM
+
+HANDLE BOTH CASES
+
+image is downloaded -> (is visible) -> it's in the DOM
+
+image is not downloaded -> (is visible) -> 'onload' handler fires
+
+* Adding marks in each image's onload handler
+
