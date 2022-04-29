@@ -50,11 +50,22 @@
     <div class="container">
       <!-- Start images -->
       <div class="gallery">
-        <img onload="performance.mark('img:visible')" src="https://picsum.photos/id/237/380/200" />
-        <img onload="performance.mark('img:visible')" src="https://picsum.photos/id/1/380/200" />
-        <img onload="performance.mark('img:visible')" src="https://picsum.photos/id/1003/380/200" />
+        <img
+          onload="performance.mark('img:visible')"
+          src="https://picsum.photos/id/237/380/200"
+        />
+        <img
+          onload="performance.mark('img:visible')"
+          src="https://picsum.photos/id/1/380/200"
+        />
+        <img
+          onload="performance.mark('img:visible')"
+          src="https://picsum.photos/id/1003/380/200"
+        />
       </div>
-			<script>performance.mark('img:visible')</script>
+      <script>
+        performance.mark('img:visible')
+      </script>
       <!-- End images -->
 
       <h1>Performance Analytics Demo</h1>
@@ -64,6 +75,9 @@
     <!-- Start JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+      performance.mark('js:execute')
+    </script>
     <!-- End JavaScript -->
 
     <!-- Start performance analytics -->

@@ -31,3 +31,6 @@ image is not downloaded -> (is visible) -> 'onload' handler fires
 
 * Adding marks in each image's onload handler
 
+## Step 3: Measuring when JavaScript has finished executing 	
+
+You can determine the point at which all scripts have finished executing by adding a mark in an inline script tag immediately after the last synchronous `<script>` in the DOM.
