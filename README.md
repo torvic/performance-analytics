@@ -41,6 +41,10 @@ Not all browsers support JavaScript promises or the User Timing APIs
 
 You can use feature detection
 
+## Step 6: Capturing these measurements in Google Analytics 	
+
+This is the final step.
+
 
 
 

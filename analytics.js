@@ -7,6 +7,10 @@ window.onload = function () {
 
 function measureCssUnblockTime() {
   console.log('CSS', 'unblock', measureDuration('css:unblock'))
+  let cssUnblockTime = measureDuration('css:unblock')
+  if (cssUnblockTime) {
+    ga('send', 'timing', 'CSS', 'unblock', cssUnblockTime)
+  }
 }
 
 function measureWebfontPerfAndFailures() {
@@ -34,9 +38,14 @@ function measureWebfontPerfAndFailures() {
     })
       .then(function () {
         console.log('Fonts', 'active', measureDuration('fonts:active'))
+        let fontsActiveTime = measureDuration('fonts:active')
+        if (fontsActiveTime) {
+          ga('send', 'timing', 'Fonts', 'active', fontsActiveTime)
+        }
       })
       .catch(function () {
         console.error('Error loading web fonts')
+        ga('send', 'event', 'Fonts', 'error')
       })
   }
 }
@@ -57,7 +66,7 @@ function measureDuration(mark, opt_reference) {
     let measure = performance.getEntriesByName(name)[0]
 
     // Returns the measure duration.
-    return measure.duration
+    return Math.round(measure.duration)
   }
 }
 
@@ -68,6 +77,10 @@ function measureDuration(mark, opt_reference) {
  */
 function measureImagesVisibleTime() {
   console.log('Images', 'visible', measureDuration('img:visible'))
+  let imgVisibleTime = measureDuration('img:visible')
+  if (imgVisibleTime) {
+    ga('send', 'timing', 'Images', 'visible', imgVisibleTime)
+  }
 }
 
 /**
@@ -77,4 +90,8 @@ function measureImagesVisibleTime() {
  */
 function measureJavaSciptExecutionTime() {
   console.log('JavaScript', 'execute', measureDuration('js:execute'))
+  let jsExecuteTime = measureDuration('js:execute')
+  if (jsExecuteTime) {
+    ga('send', 'timing', 'JavaScript', 'execute', jsExecuteTime)
+  }
 }

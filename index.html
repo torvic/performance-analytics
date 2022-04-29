@@ -18,7 +18,7 @@
         google: { families: ['Roboto:400,700,400italic'] },
         timeout: 10000,
         active: function () {
-          performance.mark('fonts:active')
+          __perf && performance.mark('fonts:active')
         },
       }
     </script>
@@ -48,7 +48,7 @@
       }
     </style>
     <script>
-      performance.mark('css:unblock')
+      __perf && performance.mark('css:unblock')
     </script>
     <!-- End CSS -->
   </head>
@@ -82,9 +82,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script>
-      performance.mark('js:execute')
+      __perf && performance.mark('js:execute')
     </script>
     <!-- End JavaScript -->
+
+    <!-- Start analytics tracking snippet -->
+    <script>
+      window.ga =
+        window.ga ||
+        function () {
+          ;(ga.q = ga.q || []).push(arguments)
+        }
+      ga.l = +new Date()
+      ga('create', 'UA-XXXXX-Y', 'auto')
+      ga('send', 'pageview')
+    </script>
+    <script
+      async
+      src="https://www.google-analytics.com/analytics_debug.js"
+    ></script>
+    <!-- End analytics tracking snippet -->
 
     <!-- Start performance analytics -->
     <script async src="analytics.js"></script>
